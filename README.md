@@ -48,6 +48,16 @@ The database data can be changed by deleting the existing /db/db.sqlite and edit
 
 To easily visualize the database, run the /db/display-users.php or install a sqlite cli or gui.
 
+## Additional/Amended Features
+
+Session:
+  When logging in, a php session is used to keep the user logged in until the logout button is clicked or the session expires.
+
+Authorization:
+  While the initial redirection is based on the level of the user, the level of permissions have been implemented following SuperAdmin>Admin>User.
+  Admin Users can access the User Page and SuperAdmin Users can access both Admin and User pages.
+  A 403 error is called if trying to access a non authorized page.
+
 ## Packages used
 
 * [Respect/Validation](https://github.com/Respect/Validation)
