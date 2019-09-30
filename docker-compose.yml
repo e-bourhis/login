@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+  #PHP application
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: etiennebourhis/sosurephp
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www
