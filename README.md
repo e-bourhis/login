@@ -3,6 +3,7 @@
 ## Getting Started
 
 The app is shipped with a docker-compose file that sets up a simple LAMP container accessible on localhost:8000 ( The port can be changed in the docker-compose.yml in case of conflict).
+
 The app also includes a small sqlite database in the /db folder containing the provided data.
 
 ### Prerequisites
