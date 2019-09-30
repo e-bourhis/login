@@ -20,7 +20,7 @@ cd into the folder
 Start the container:
 
 ```
-docker-composer up -d
+docker-compose up -d
 ```
 
 install the dependencies and set the PSR-4 autoloader with composer
