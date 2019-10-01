@@ -72,6 +72,7 @@ class Controller
         if ($this->user->isLoggedIn()) {
             if ($_GET['logout']=='true') {
                 $this->user->logout();
+                $this->user->redirect();
             } else {
                 //Get current session user
                 $this->user->getSessionUser();
@@ -94,6 +95,7 @@ class Controller
         if ($this->user->isLoggedIn()) {
             if ($_GET['logout']=='true') {
                 $this->user->logout();
+                $this->user->redirect();
             } else {
                 //Get current session user
                 $this->user->getSessionUser();
@@ -116,11 +118,14 @@ class Controller
         if ($this->user->isLoggedIn()) {
             if ($_GET['logout']=='true') {
                 $this->user->logout();
+                $this->user->redirect();
             } else {
                 //Get current session user
                 $this->user->getSessionUser();
 
                 if (!$this->user->isSuperAdmin()) {
+                  header('HTTP/1.0 403 Forbidden');
+                  exit();
                 }
             }
         } else {

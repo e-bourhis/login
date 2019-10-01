@@ -130,26 +130,27 @@ class User
         if ($this->isLoggedIn()) {
             if ($this->level) {
                 switch ($this->level) {
-          case 'user':
-            header('Location: userPage.php');
-            exit();
-            break;
-          case 'admin':
-            header('Location: adminPage.php');
-            exit();
-            break;
-          case 'superadmin':
-            header('Location: superAdminPage.php');
-            exit();
-          break;
-          default:
-            $this->logout();
-            echo "Error: Unknown User Level";
-            exit;
-          break;
-        }
+                  case 'user':
+                    header('Location: userPage.php');
+                    exit();
+                    break;
+                  case 'admin':
+                    header('Location: adminPage.php');
+                    exit();
+                    break;
+                  case 'superadmin':
+                    header('Location: superAdminPage.php');
+                    exit();
+                  break;
+                  default:
+                    $this->logout();
+                    echo "Error: Unknown User Level";
+                    exit;
+                  break;
+                }
             } else {
                 $this->logout();
+                $this->redirect();
             }
         } else {
             header('Location: /');
@@ -162,6 +163,7 @@ class User
      */
     public function logout()
     {
+        $_SESSION['login'] = false;
         session_destroy();
     }
 }
