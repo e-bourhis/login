@@ -8,7 +8,7 @@ The app also includes a small sqlite database in the /db folder containing the p
 
 ### Prerequisites
 
-A server or computer with Docker Installed (Recommended)
+A server or computer with Docker Installed (Recommended) https://docs.docker.com
 
 Otherwise, a server running PHP 7.2, composer and Apache Server pointing to the /html folder is needed.
 
